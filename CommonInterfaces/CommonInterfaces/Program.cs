@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace CommonInterfaces
 {
@@ -15,28 +16,37 @@ namespace CommonInterfaces
       p4.X = 0;
       Console.WriteLine(p3);
       Console.WriteLine(p4);
+      Console.WriteLine(p3.CompareTo(p4));
+
+      Point p5 = new Point();
+      foreach (int i in p5)
+      {
+        Console.WriteLine(i);
+      }
 
       Console.ReadKey();
 
+
     }
 
-    public class Point : ICloneable, IComparable
+    public class Point : ICloneable, IComparable, IEnumerable
     {
       public int X { get; set; }
       public int Y { get; set; }
+      int[] numbers = new int [3];
       public Point(int xPos, int yPos) { X = xPos; Y = yPos; }
-      public Point() { }
+      public Point()
+       {
+        numbers[0] = 5;
+        numbers[1] = 7;
+        numbers[2] = 8;
+      }
 
       // Implement the ICloneable Interface
       public object Clone()
-      { return new Point(this.X, this.Y); }
-
+      { return new Point(this.X, this.Y); } 
      
     
-
-
-
-
       // Override ToString()
       public override string ToString()
       { return string.Format("X = {0}; Y = {1}", X, Y); }
@@ -49,6 +59,11 @@ namespace CommonInterfaces
         if (this.X > another.X) return -1;
         if (this.X == another.X) return 0;
         return 1;
+      }
+      // Implement the IEnumerable Interface
+      public IEnumerator GetEnumerator()
+      {
+        return numbers.GetEnumerator();
       }
     }
 
