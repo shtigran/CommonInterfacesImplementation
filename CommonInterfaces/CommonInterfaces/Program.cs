@@ -18,9 +18,10 @@ namespace CommonInterfaces
       Console.WriteLine(p4);
       Console.WriteLine(p3.CompareTo(p4));
 
-      Point p5 = new Point();
-      foreach (int i in p5)
+      Point p1 = new Point();
+      foreach (int i in p1)
       {
+
         Console.WriteLine(i);
       }
 
