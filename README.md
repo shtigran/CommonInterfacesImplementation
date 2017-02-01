@@ -2,7 +2,7 @@
 # C#6.0  .NET FRAMEWORK 4.6
 ----
 
-### The Interfaces implementation
+### The Point class and  Interfaces implementation
 
 ```C#
 public class Point : ICloneable, IComparable, IEnumerable
