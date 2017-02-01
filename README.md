@@ -7,7 +7,7 @@ This Project illustrate how You can implement the common interfaces (ICloneable,
 
 ----
 
-### The Point class and  Interfaces implementation
+### Point class and  Interfaces implementation
 
 ```C#
 public class Point : ICloneable, IComparable, IEnumerable
@@ -46,3 +46,27 @@ public class Point : ICloneable, IComparable, IEnumerable
         return numbers.GetEnumerator();
       }
 ```
+
+### Program class implementation
+```C#
+static void Main(string[] args)
+    {
+      Point p3 = new Point(100, 100);
+      Point p4 = (Point)p3.Clone();
+      p4.X = 0;
+      Console.WriteLine(p3);
+      Console.WriteLine(p4);
+      Console.WriteLine(p3.CompareTo(p4));
+
+      Point p1 = new Point();
+      foreach (int i in p1)
+      {
+
+        Console.WriteLine(i);
+      }
+
+      Console.ReadKey();
+    }
+```
+
+
