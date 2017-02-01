@@ -2,6 +2,11 @@
 # C#6.0  .NET FRAMEWORK 4.6
 ----
 
+### Description of ReplaceArm class
+This Project illustrate how You can implement the common interfaces (ICloneable, IComparable, IEnumerable) for Your own class.
+
+----
+
 ### The Point class and  Interfaces implementation
 
 ```C#
