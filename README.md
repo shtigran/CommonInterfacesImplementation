@@ -5,7 +5,19 @@
 ### The Interfaces implementation
 
 ```C#
-// Implement the ICloneable Interface
+public class Point : ICloneable, IComparable, IEnumerable
+ {
+      public int X { get; set; }
+      public int Y { get; set; }
+      int[] numbers = new int [3];
+      public Point(int xPos, int yPos) { X = xPos; Y = yPos; }
+      public Point()
+       {
+        numbers[0] = 5;
+        numbers[1] = 7;
+        numbers[2] = 8;
+      }
+      // Implement the ICloneable Interface
       public object Clone()
       { return new Point(this.X, this.Y); } 
      
