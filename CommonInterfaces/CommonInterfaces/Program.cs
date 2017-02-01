@@ -20,7 +20,7 @@ namespace CommonInterfaces
 
     }
 
-    public class Point : ICloneable
+    public class Point : ICloneable, IComparable
     {
       public int X { get; set; }
       public int Y { get; set; }
@@ -31,9 +31,27 @@ namespace CommonInterfaces
       public object Clone()
       { return new Point(this.X, this.Y); }
 
+     
+    
+
+
+
+
       // Override ToString()
       public override string ToString()
       { return string.Format("X = {0}; Y = {1}", X, Y); }
+
+      // Implement the IComparable Interface
+     
+      public int CompareTo(object obj)
+      {
+        Point another = (Point)obj;
+        if (this.X > another.X) return -1;
+        if (this.X == another.X) return 0;
+        return 1;
+      }
     }
+
+
   }
 }
